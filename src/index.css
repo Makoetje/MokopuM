@@ -1,218 +1,163 @@
-/* Global Reset and Body Style */
-* {
-  box-sizing: border-box;
-}
-
 body {
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: hsl(140, 18%, 3%);
-  display: flex;
-  flex-direction: column; /* Ensure children stack vertically */
-  font-weight: bold;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  margin: 300px;
+  background-color: #b1d7f8;
+  color: #134e91;
 }
 
-header {
-  color: #0e0211;
-  padding: 20px 0;
+img {
+  margin-left: 300px;
+  height: 230px;
+  width: 300px;
+}
+
+h1, h2 {
   text-align: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  width: 100%;
-  background-color: rgba(235, 232, 232, 0);
+  color: #134e91;
+  font-family: 'Pacifico', cursive;
 }
 
-nav {
-  display: flex; /* Change to flex to center its contents */
-  justify-content: center; /* Center the navigation items */
-  padding: 10px 0;
-  width: 100%; /* Full width to match header */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+h3 {
+  text-align: center;
+  font-size: 30px;
 }
 
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex; /* Align links in a row */
+
+.hidden {
+  display: none;
 }
 
-nav ul li {
-  margin: 0 15px; /* Horizontal spacing between links */
-}
-
-nav a {
-  color: #333; /* Dark shade for text links */
-  text-decoration: none;
-  transition: all 0.3s ease;
-  padding: 10px;
+.visible {
   display: block;
-  font-weight: bold;
 }
 
-nav a:hover {
-  text-decoration: underline;
-  color: #00BFFF; /* Light teal on hover */
-}
-
-main {
+.form-container, .inventory-container {
+  margin: 50px auto;
+  max-width: 900px;
   padding: 20px;
-  max-width: 800px;
-  margin: 20px auto; /* Center the main content */
-  background-color: rgba(0, 191, 255, 0.2); /* Light teal */
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  flex-grow: 1;
-}
-
-h1, h2, h3 {
-  color: #161616;
-  font-weight: bold;
+  border-radius: 30px;
+  background-color: #bdbcbc;
+  box-shadow: 0 4px 8px rgba(38, 32, 32, 0.2);
 }
 
 form {
-  margin-bottom: 20px;
-  padding: 20px;
-  background-color: rgba(0, 191, 255, 0.8); /* More opaque light teal */
-  border: 2px solid #00BFFF; /* Teal border */
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
 }
 
-form input,
-form select,
-form button {
-  width: calc(100% - 22px);
-  padding: 12px;
+label, input, button {
   margin: 10px 0;
-  border: 2px solid #00BFFF; /* Teal border */
-  border-radius: 4px;
-  font-size: 18px; /* Increased font size for better readability */
-  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-form input::placeholder,
-form select::placeholder {
-  color: hsl(0, 0%, 50%);
+input, button {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
 }
 
-form input:focus,
-form select:focus {
-  border-color: #00FFFF; /* Change border color to cyan */
-  box-shadow: 0 0 5px rgba(0, 255, 255, 0.5); /* Light cyan */
-  outline: none;
+input {
+  font-size: 16px;
 }
 
-form button {
-  background-color: #00BFFF; /* Teal */
-  color: #FFFFFF;
+button {
+  background-color: #47d060;
+  color: white;
   border: none;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
-  font-size: 18px; /* Increased button font size */
+  font-size: 16px;
+  transition: background-color 0.3s ease;
 }
 
-form button:hover {
-  background-color: #009AC1; /* Darker teal on hover */
-  transform: translateY(-2px);
+button:hover {
+  background-color: #b1a5a0;
 }
 
-.feedback {
-  margin-top: 10px;
-  color: rgb(10, 136, 42);
-}
-
-#dashboard {
-  border: 1px solid #4CAF50;
-  padding: 15px;
-  background-color: #00BFFF; /* Teal */
-  border-radius: 8px;
-  margin-bottom: 20px;
-  color: #8f360f;
-}
-
-h2 {
-  border-bottom: 2px solid #4CAF50;
-  padding-bottom: 5px;
-  color: #1f0c04;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  background-color: #a38549;
-  margin: 5px 0;
-  padding: 10px;
-  border-radius: 4px;
-  transition: background-color 0.3s;
-  font-weight: bold;
-}
-
-li:hover {
-  background-color: #C6A06D;
-  color: #B7410E;
-}
-
-#dashboard a,
-#product-management a,
-#user-management a {
-  color: #491b07;
-  font-weight: bold;
-}
-
-/* New table styles for Product Management */
-.product-table,
-.transaction-table {
+table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
 }
 
-.product-table th,
-.transaction-table th,
-.product-table td,
-.transaction-table td {
-  border: 5px solid #0a0303;
-  padding: 15px;
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 12px;
   text-align: left;
-  font-size: 16px; /* Adjusted font size for table data */
 }
 
-.product-table th,
-.transaction-table th {
-  background-color: #00BFFF; /* Teal */
-  color: white;
-  font-weight: bold;
-  font-size: 18px; /* Header font size */
+th {
+  background-color: #47d060;
+  color: #134e91;
 }
 
-.product-table tr:nth-child(even),
-.transaction-table tr:nth-child(even) {
+tr:nth-child(even) {
   background-color: #f9f9f9; 
 }
 
-.product-table tr:hover,
-.transaction-table tr:hover {
-  background-color: #00CED1; /* Darker teal on hover */
-  cursor: pointer;
+tr:nth-child(odd) {
+  background-color: #fff; 
 }
 
-.product-table td,
-.transaction-table td {
-  vertical-align: middle;
-}
-
-.product-table td:first-child,
-.transaction-table td:first-child {
+.error-message {
+  color: red;
   font-weight: bold;
 }
 
-.product-table td:last-child,
-.transaction-table td:last-child {
-  text-align: center;
+.success-message {
+  color: green;
+  font-weight: bold;
+}
+
+/* App.css */
+
+.App {
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  position: fixed; /* Make the header fixed */
+  top: 0; /* Place it at the top */
+  left: 0; /* Align it to the left */
+  right: 0; /* Align it to the right */
+  z-index: 1000; /* Ensure it stays above other content */
+  background: #b1d7f8; /* Background color (can be adjusted) */
+  border-bottom: 2px solid #47d060; /* Border below the header */
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  background-color: #47d060;
+  padding: 10px;
+  
+}
+
+.navbar button {
+  background-color: #fff;
+  color: #333;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.navbar button:hover {
+  background-color: #ddd;
+}
+
+.logout-button {
+  background-color: #ff4d4d; /* Red color for logout button */
+  color: white; /* White text */
+}
+
+.logout-button:hover {
+  background-color: #ff1a1a; /* Darker red on hover */
+}
+
+/* Adjust the content margin to account for the fixed header */
+.content {
+  margin-top: 100px; /* Adjust this value to account for both the header's height and the navbar's height */
+  padding: 20px; /* Optional padding for content */
 }
